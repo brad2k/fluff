@@ -1,0 +1,18 @@
+/* Composition layer: layout primitives with zero visual opinion —
+   no color, no type, just arrangement. Add more (grid, sidebar,
+   frame...) as real components need them; don't pre-build the whole
+   CUBE composition catalog speculatively. */
+@layer composition {
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}

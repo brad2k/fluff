@@ -1,0 +1,60 @@
+@layer block {
+  .button {
+    --btn-bg: var(--color-brand-600);
+    --btn-bg-hover: var(--color-brand-700);
+    --btn-color: var(--color-white);
+
+    margin: 0;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-md);
+    line-height: 1;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    border-width: 0;
+    border-radius: var(--radius-md);
+    transition: background-color 200ms ease-in-out;
+  }
+
+  .button:hover {
+    background: var(--btn-bg-hover);
+  }
+
+  .button[aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  .button:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer exception {
+  .button[data-size="sm"] {
+    font-size: var(--font-size-sm);
+    padding: var(--space-2) var(--space-2);
+  }
+
+  .button[data-size="lg"] {
+    font-size: var(--font-size-lg);
+    padding: var(--space-4) var(--space-4);
+  }
+
+  .button[data-variant="secondary"] {
+    --btn-bg: var(--color-neutral-100);
+    --btn-bg-hover: var(--color-neutral-200);
+    --btn-color: var(--color-neutral-900);
+  }
+
+  .button[data-variant="ghost"] {
+    --btn-bg: transparent;
+    --btn-bg-hover: var(--color-neutral-100);
+    --btn-color: var(--color-neutral-900);
+  }
+
+  .button[data-variant="danger"] {
+    --btn-bg: var(--color-danger-600);
+    --btn-bg-hover: var(--color-danger-700);
+    --btn-color: var(--color-white);
+  }
+}

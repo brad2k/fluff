@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node /private/tmp/claude-501/-Users-brad-Code-fluff/2469952b-64b1-4326-ae53-9d1855afb8d7/scratchpad/hex.mjs)",
+      "Bash(node /private/tmp/claude-501/-Users-brad-Code-fluff/2469952b-64b1-4326-ae53-9d1855afb8d7/scratchpad/hex.mjs --write)",
+      "Bash(git -C /Users/brad/Code/fluff diff --stat -- src/styles/tokens/primitives/_colors.css)",
+      "mcp__claude_ai_Figma__whoami",
+      "mcp__claude_ai_Figma__get_figma_skill",
+      "mcp__claude_ai_Figma__create_new_file",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}

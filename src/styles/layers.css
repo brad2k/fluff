@@ -1,7 +1,0 @@
-/* Declares CUBE CSS layer order once, up front. Whatever's declared
-   later here wins, regardless of where a rule is written or how
-   specific its selector is — this is what lets Block and Exception
-   rules stay simple (low specificity, plain classes/attributes)
-   without ever losing a cascade fight. Import this before any other
-   library stylesheet. */
-@layer composition, utility, block, exception;

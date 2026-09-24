@@ -1,0 +1,49 @@
+.alert {
+  --alert-bg: var(--color-surface-info);
+  --alert-text: var(--color-text-info);
+  --alert-text-title: var(--color-text-title-info, var(--alert-text));
+  --alert-padding: var(--gap-default);
+
+  background-color: var(--alert-bg);
+  color: var(--alert-text);
+  padding: var(--alert-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-inline-default);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--alert-padding);
+}
+
+.closeIcon {
+  height: 1em;
+  width: 1em;
+}
+
+.title {
+  color: var(--alert-text-title);
+  margin: 0;
+  margin-inline-end: auto;
+}
+
+.alert[data-variant="success"] {
+  --alert-bg: var(--color-surface-success);
+  --alert-text: var(--color-text-success);
+  --alert-text-title: var(--color-text-title-success);
+}
+
+.alert[data-variant="warning"] {
+  --alert-bg: var(--color-surface-warning);
+  --alert-text: var(--color-text-warning);
+  --alert-text-title: var(--color-text-title-warning);
+}
+
+.alert[data-variant="danger"] {
+  --alert-bg: var(--color-surface-danger);
+  --alert-text: var(--color-text-danger);
+  --alert-text-title: var(--color-text-title-danger);
+}

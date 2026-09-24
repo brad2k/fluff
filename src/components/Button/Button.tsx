@@ -1,5 +1,3 @@
-"use client";
-
 import clsx from "clsx";
 import styles from "./Button.module.css";
 
@@ -19,8 +17,7 @@ interface AnchorProps extends SharedProps, React.ComponentPropsWithRef<"a"> {
 }
 
 interface ButtonElementProps
-  extends SharedProps,
-    React.ComponentPropsWithRef<"button"> {
+  extends SharedProps, React.ComponentPropsWithRef<"button"> {
   href?: never;
   as?: "button";
 }
@@ -28,47 +25,55 @@ interface ButtonElementProps
 export type ButtonProps = AnchorProps | ButtonElementProps;
 
 export function Button(props: ButtonProps) {
-  const {
-    as,
-    children,
-    className,
-    size = "md",
-    variant = "primary",
-    loading = false,
-  } = props;
+  if (props.as === "a") {
+    const {
+      as: _as, // pulling out 'as' so it doesn't get spread
+      variant = "primary",
+      size = "md",
+      loading = false,
+      className,
+      onClick,
+      children,
+      ...rest
+    } = props;
 
-  if (as === "a") {
-    const { href, onClick, ref, ...rest } = props;
     return (
       <a
-        href={href}
+        {...rest}
         className={clsx(styles.button, className)}
         data-variant={variant}
         data-size={size}
         aria-busy={loading}
         aria-disabled={loading}
-        onClick={loading ? undefined : onClick}
-        ref={ref}
-        {...rest}
+        onClick={loading ? (event) => event.preventDefault() : onClick}
       >
         {children}
       </a>
     );
   }
 
-  const { onClick, ref, ...rest } = props;
+  const {
+    as: _as, // pulling out 'as' so it doesn't get spread
+    variant = "primary",
+    size = "md",
+    loading = false,
+    className,
+    onClick,
+    type = "button",
+    children,
+    ...rest
+  } = props;
 
   return (
     <button
-      type="button"
+      {...rest}
+      type={type}
       className={clsx(styles.button, className)}
       data-variant={variant}
       data-size={size}
       aria-busy={loading}
       aria-disabled={loading}
       onClick={loading ? undefined : onClick}
-      ref={ref}
-      {...rest}
     >
       {children}
     </button>

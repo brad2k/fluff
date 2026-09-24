@@ -1,0 +1,37 @@
+/*
+    Utopia values for fluid space scales
+
+    @link https://utopia.fyi/space/calculator?c=360,16,1.2,1240,18,1.25,5,3,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+*/
+
+:root {
+  --space-3xs: clamp(0.25rem, 0.2244rem + 0.1136vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4744rem + 0.1136vw, 0.5625rem);
+  --space-xs: clamp(0.75rem, 0.6989rem + 0.2273vw, 0.875rem);
+  --space-s: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  --space-m: clamp(1.5rem, 1.4233rem + 0.3409vw, 1.6875rem);
+  --space-l: clamp(2rem, 1.8977rem + 0.4545vw, 2.25rem);
+  --space-xl: clamp(3rem, 2.8466rem + 0.6818vw, 3.375rem);
+  --space-2xl: clamp(4rem, 3.7955rem + 0.9091vw, 4.5rem);
+  --space-3xl: clamp(6rem, 5.6932rem + 1.3636vw, 6.75rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1222rem + 0.5682vw, 0.5625rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3466rem + 0.6818vw, 0.875rem);
+  --space-xs-s: clamp(0.75rem, 0.5966rem + 0.6818vw, 1.125rem);
+  --space-s-m: clamp(1rem, 0.7188rem + 1.25vw, 1.6875rem);
+  --space-m-l: clamp(1.5rem, 1.1932rem + 1.3636vw, 2.25rem);
+  --space-l-xl: clamp(2rem, 1.4375rem + 2.5vw, 3.375rem);
+  --space-xl-2xl: clamp(3rem, 2.3864rem + 2.7273vw, 4.5rem);
+  --space-2xl-3xl: clamp(4rem, 2.875rem + 5vw, 6.75rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, 0.4886rem + 2.2727vw, 2.25rem);
+
+  /* Border radii */
+  --radius-base: 0.5rem;
+  --radius-sm: calc(var(--radius-base * 0.5));
+  --radius-md: var(--radius-base);
+  --radius-lg: calc(var(--radius-base * 1.5));
+  --radius-full: 9999px;
+}

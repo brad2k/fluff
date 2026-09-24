@@ -1,0 +1,130 @@
+/* Design tokens. */
+
+:root {
+  /*
+    Core spacing tokens
+  */
+
+  /* Gutters on the main page wrapper */
+  --gutter: var(--space-s-l);
+
+  /* Vertical distance between stacked sections/blocks */
+  --gap-section: var(--space-xl-2xl);
+
+  /* Gap between grid items */
+  --gap-grid: var(--space-m-l);
+
+  /* Gaps within components --- */
+  --gap-compact: var(--space-xs); /* Dense items, tooltips, tags */
+  --gap-default: var(--space-s-m); /* Standard cards, alerts, panels */
+  --gap-spacious: var(--space-l); /* Hero cards, highlighted callouts */
+
+  /* Inline gaps for tiny spacing */
+  --gap-inline-tight: var(--space-3xs); /* Icon + text */
+  --gap-inline-default: var(--space-2xs); /* Form field gap, button groups */
+  --gap-inline-loose: var(--space-xs); /* Breadcrumb items */
+
+  /* Border radii */
+  --radius-interactive: var(--radius-sm); /* Buttons, inputs */
+  --radius-container: var(--radius-md); /* Cards, dropdowns */
+  --radius-modal: var(--radius-lg); /* Dialogs, drawers */
+  --radius-pill: var(--radius-full); /* Badges, avatars */
+
+  /*
+    Color tokens for common / baseline components
+  */
+
+  --color-bg: var(--color-white);
+  --color-surface: var(--color-lagoon-2);
+  --color-surface-strong: var(--color-lagoon-3);
+  --color-border: var(--color-midnight-4);
+  --color-text: var(--color-midnight-10);
+  --color-text-muted: var(--color-midnight-8);
+  --color-accent: var(--color-sunbeam-4); /* pair with --color-text */
+  --color-accent-hover: var(--color-sunbeam-5); /* pair with --color-text */
+  --color-accent-text: var(--color-sunbeam-10);
+  --color-link: var(--color-lagoon-8);
+  --color-focus-ring: var(--color-accent);
+
+  /* Interaction overlays — Midnight-10 at low alpha; darkens without adding hue */
+  --overlay-hover: oklch(0.278 0.058 288 / 0.05);
+  --overlay-active: oklch(0.278 0.058 288 / 0.1);
+
+  /*
+    Typography tokens
+  */
+
+  --font-sans: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --font-body: var(--font-sans);
+
+  --font-size-extra-small: var(--step--3);
+  --font-size-small: var(--step--2);
+  --font-size-subtle: var(--step--1);
+  --font-size-base: var(--step-0);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /*
+    Status tokens
+    "info" | "success" | "warning" | "danger";
+  */
+
+  --color-surface-info: var(--color-bluebell-3);
+  --color-text-info: var(--color-bluebell-9);
+  --color-text-title-info: var(--color-bluebell-10);
+
+  --color-surface-success: var(--color-meadow-3);
+  --color-text-success: var(--color-meadow-9);
+  --color-text-title-success: var(--color-meadow-10);
+
+  --color-surface-warning: var(--color-ember-3);
+  --color-text-warning: var(--color-ember-9);
+  --color-text-title-warning: var(--color-ember-10);
+
+  --color-surface-danger: var(--color-poppy-3);
+  --color-text-danger: var(--color-poppy-9);
+  --color-text-title-danger: var(--color-poppy-10);
+
+  /*
+    Button tokens
+    
+    "primary" | "secondary" | "ghost" | "danger";
+    "sm" | "md" | "lg"
+    
+    Styles default to "primary/md" unless overridden
+  */
+
+  --button-font: var(--font-body);
+  --button-weight: var(--font-weight-medium);
+
+  --button-primary-border-radius: 0;
+  --button-primary-bg: var(--color-sunbeam-4);
+  --button-primary-bg-hover: var(--color-sunbeam-5);
+  --button-primary-text: var(--color-sunbeam-10);
+
+  --button-secondary-bg: var(--color-midnight-1);
+  --button-secondary-bg-hover: var(--color-midnight-2);
+  --button-secondary-text: var(--color-midnight-10);
+
+  --button-ghost-bg: transparent;
+  --button-ghost-bg-hover: var(--color-midnight-3);
+  --button-ghost-text: var(--color-midnight-10);
+
+  --button-danger-bg: var(--color-poppy-3);
+  --button-danger-bg-hover: var(--color-poppy-4);
+  --button-danger-text: var(--color-poppy-10);
+
+  --button-lg-font-size: var(--font-size-base);
+  --button-lg-padding: var(--gap-inline-default);
+
+  --button-md-font-size: var(--font-size-subtle);
+  --button-md-padding: var(--gap-inline-default) var(--gap-inline-tight);
+
+  --button-sm-font-size: var(--font-size-subtle);
+  --button-sm-padding: var(--gap-inline-tight);
+}

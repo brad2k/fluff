@@ -1,5 +1,5 @@
 /* Utility layer: single-purpose, non-negotiable helper classes. */
-@layer utility {
+@layer fluff.utilities {
   .visually-hidden {
     position: absolute;
     width: 1px;

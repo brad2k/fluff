@@ -30,8 +30,8 @@
 
   /* Border radii */
   --radius-base: 0.5rem;
-  --radius-sm: calc(var(--radius-base * 0.5));
+  --radius-sm: calc(var(--radius-base) * 0.5);
   --radius-md: var(--radius-base);
-  --radius-lg: calc(var(--radius-base * 1.5));
+  --radius-lg: calc(var(--radius-base) * 1.5);
   --radius-full: 9999px;
 }

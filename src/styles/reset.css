@@ -12,13 +12,7 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    overscroll-behavior: none;
     interpolate-size: allow-keywords;
-  }
-
-  body {
-    min-block-size: 100dvh;
-    font-family: system-ui, sans-serif;
   }
 
   p,

@@ -2,14 +2,15 @@
   --alert-bg: var(--color-surface-info);
   --alert-text: var(--color-text-info);
   --alert-text-title: var(--color-text-title-info, var(--alert-text));
-  --alert-padding: var(--gap-default);
+  --alert-padding: var(--alert-padding, var(--gap-default));
+  --alert-gap: var(--alert-gap, var(--gap-inline-default));
 
   background-color: var(--alert-bg);
   color: var(--alert-text);
   padding: var(--alert-padding);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-inline-default);
+  gap: var(--alert-gap);
 }
 
 .header {

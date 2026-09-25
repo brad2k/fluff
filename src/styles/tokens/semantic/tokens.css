@@ -91,6 +91,17 @@
   --color-text-title-danger: var(--color-poppy-10);
 
   /*
+    Alert tokens
+    
+    "info" | "success" | "warning" | "danger"
+    
+    Most are fed by "status" tokens
+  */
+
+  --alert-padding: var(--gap-default);
+  --alert-gap: var(var(--gap-inline-default));
+
+  /*
     Button tokens
     
     "primary" | "secondary" | "ghost" | "danger";
@@ -107,12 +118,12 @@
   --button-primary-bg-hover: var(--color-sunbeam-5);
   --button-primary-text: var(--color-sunbeam-10);
 
-  --button-secondary-bg: var(--color-midnight-1);
-  --button-secondary-bg-hover: var(--color-midnight-2);
+  --button-secondary-bg: var(--color-midnight-2);
+  --button-secondary-bg-hover: var(--color-midnight-3);
   --button-secondary-text: var(--color-midnight-10);
 
   --button-ghost-bg: transparent;
-  --button-ghost-bg-hover: var(--color-midnight-3);
+  --button-ghost-bg-hover: var(--color-overlay);
   --button-ghost-text: var(--color-midnight-10);
 
   --button-danger-bg: var(--color-poppy-3);
@@ -120,11 +131,11 @@
   --button-danger-text: var(--color-poppy-10);
 
   --button-lg-font-size: var(--font-size-base);
-  --button-lg-padding: var(--gap-inline-default);
+  --button-lg-padding: var(--gap-inline-loose);
 
-  --button-md-font-size: var(--font-size-subtle);
-  --button-md-padding: var(--gap-inline-default) var(--gap-inline-tight);
+  --button-md-font-size: var(--font-size-base);
+  --button-md-padding: var(--gap-inline-default) var(--gap-inline-default);
 
   --button-sm-font-size: var(--font-size-subtle);
-  --button-sm-padding: var(--gap-inline-tight);
+  --button-sm-padding: var(--gap-inline-default);
 }

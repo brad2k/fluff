@@ -38,21 +38,23 @@ export function Alert({
         className={clsx(styles.alert, className)}
         data-variant={variant}
       >
-        <header className={styles.header}>
-          {title && (
-            <HeadingLevel className={styles.title}>{title}</HeadingLevel>
-          )}
-          {dismissible && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsVisible(false)}
-            >
-              <X className={styles.closeIcon} />
-              <span className="visually-hidden">Close</span>
-            </Button>
-          )}
-        </header>
+        {(title || dismissible) && (
+          <header className={styles.header}>
+            {title && (
+              <HeadingLevel className={styles.title}>{title}</HeadingLevel>
+            )}
+            {dismissible && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsVisible(false)}
+              >
+                <X className={styles.closeIcon} />
+                <span className="visually-hidden">Close</span>
+              </Button>
+            )}
+          </header>
+        )}
         {children}
       </section>
     )

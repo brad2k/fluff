@@ -2,11 +2,6 @@
   Baseline styles on bare elements that can consume tokens, but don't define them.
 */
 
-/*
-    Global styles
-    Low-specificity, global styles
-  */
-
 html {
   font-family: var(--font-body, system-ui, sans-serif);
   color: var(--color-text, #111);
@@ -18,9 +13,7 @@ body {
   font-optical-sizing: auto;
   line-height: var(--leading-standard);
   font-size-adjust: from-font;
-  /* display: grid;
-    grid-template-rows: [header] auto [main] 1fr [footer] auto;
-    gap: var(--space-xl); */
+  min-block-size: 100dvh;
 
   @media (prefers-reduced-motion: no-preference) {
     transition: color var(--transition-base);

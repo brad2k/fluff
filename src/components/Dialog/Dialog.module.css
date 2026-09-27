@@ -1,0 +1,27 @@
+.dialog {
+  --_alert-bg: var(--color-surface-info);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--_alert-padding);
+}
+
+.closeIcon {
+  height: 1em;
+  width: 1em;
+}
+
+.title {
+  color: var(--_alert-text-title);
+  margin: 0;
+  margin-inline-end: auto;
+}
+
+.dialog[data-variant="success"] {
+  --_alert-bg: var(--color-surface-success);
+  --_alert-text: var(--color-text-success);
+  --_alert-text-title: var(--color-text-title-success);
+}

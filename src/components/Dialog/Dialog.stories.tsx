@@ -1,24 +1,52 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, waitFor, within } from "storybook/test";
-import { Dialog } from "./Dialog";
+import type { DialogProps } from "./";
+import { Dialog } from "./";
+import { Button } from "../Button";
 
-const meta = {
-  title: "Components/Dialog",
-  component: Dialog,
-  tags: ["autodocs"],
-  args: {
-    children: <p>Some fantastic dialog content.</p>,
-  },
-  argTypes: {},
-  render: (args) => (
+interface DialogExampleProps {
+  title: string;
+  children: React.ReactNode;
+  onClose?: DialogProps["onClose"];
+}
+
+function DialogExample({ title, children, onClose }: DialogExampleProps) {
+  return (
     <div style={{ padding: "20px" }}>
       <button command="show-modal" commandfor="story-dialog">
         Open dialog
       </button>
-      <Dialog {...args} id="story-dialog" />
+      <Dialog.Root id="story-dialog" onClose={onClose} closeOnBackdropClick>
+        <Dialog.Header title={title} />
+        <Dialog.Body>{children}</Dialog.Body>
+        <Dialog.Footer>
+          <Button>Let’s do this!</Button>
+        </Dialog.Footer>
+      </Dialog.Root>
     </div>
-  ),
-} satisfies Meta<typeof Dialog>;
+  );
+}
+
+const meta = {
+  title: "Components/Dialog",
+  component: DialogExample,
+  tags: ["autodocs"],
+  args: {
+    title: "My awesome Dialog",
+    children: (
+      <p>
+        Some truly fantastic dialog content. Some truly fantastic dialog
+        content. Some truly fantastic dialog content.
+      </p>
+    ),
+  },
+  subcomponents: {
+    Header: Dialog.Header,
+    Body: Dialog.Body,
+    Footer: Dialog.Footer,
+  },
+  argTypes: {},
+} satisfies Meta<typeof DialogExample>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

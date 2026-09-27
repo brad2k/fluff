@@ -15,7 +15,7 @@
   --gap-grid: var(--space-m-l);
 
   /* Gaps within components --- */
-  --gap-compact: var(--space-xs); /* Dense items, tooltips, tags */
+  --gap-compact: var(--space-s); /* Dense items, tooltips, tags */
   --gap-default: var(--space-s-m); /* Standard cards, alerts, panels */
   --gap-spacious: var(--space-l); /* Hero cards, highlighted callouts */
 
@@ -134,8 +134,8 @@
   --button-lg-padding: var(--gap-inline-loose);
 
   --button-md-font-size: var(--font-size-base);
-  --button-md-padding: var(--gap-inline-default) var(--gap-inline-default);
+  --button-md-padding: var(--gap-inline-default) var(--gap-compact);
 
   --button-sm-font-size: var(--font-size-subtle);
-  --button-sm-padding: var(--gap-inline-default);
+  --button-sm-padding: var(--gap-inline-tight);
 }

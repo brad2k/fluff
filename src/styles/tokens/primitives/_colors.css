@@ -18,6 +18,7 @@
   --color-overlay-subtle: oklch(0 0 0 / 0.08);
   --color-overlay: oklch(0 0 0 / 0.12);
   --color-overlay-strong: oklch(0 0 0 / 0.16);
+  --color-overlay-backdrop: oklch(0 0 0 / 0.5);
 
   /* Midnight — neutrals */
   --color-midnight-1: oklch(0.985 0.005 285); /* #fafafd */

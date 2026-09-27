@@ -1,4 +1,5 @@
 @import "./primitives/_colors.css";
 @import "./primitives/_space.css";
 @import "./primitives/_typography.css";
+@import "./primitives/_motion.css";
 @import "./semantic/tokens.css";

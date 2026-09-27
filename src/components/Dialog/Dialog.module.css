@@ -1,27 +1,58 @@
 .dialog {
-  --_alert-bg: var(--color-surface-info);
+  background: var(--color-white);
+  padding: 0;
+  opacity: 0;
+  scale: 0.95;
+  border-width: 0;
+  max-inline-size: min(30rem, calc(100vw - var(--gap-default)));
+  max-block-size: calc(100dvh - var(--gap-default));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity var(--animation-transition-snappy),
+      scale var(--animation-transition-snappy);
+  }
+
+  &::backdrop {
+    background-color: oklch(0 0 0 / 0);
+    transition: background-color var(--animation-transition-snappy);
+  }
 }
 
-.header {
+.dialog[open] {
+  opacity: 1;
+  scale: 1;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  &::backdrop {
+    background-color: var(--color-overlay-backdrop);
+  }
+
+  @starting-style {
+    &::backdrop {
+      background-color: oklch(0 0 0 / 0);
+    }
+  }
+}
+
+.dialog[open][data-closing] {
+  opacity: 0;
+  scale: 0.95;
+
+  &::backdrop {
+    background-color: oklch(0 0 0 / 0);
+  }
+}
+
+.dialogContent {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--_alert-padding);
-}
-
-.closeIcon {
-  height: 1em;
-  width: 1em;
-}
-
-.title {
-  color: var(--_alert-text-title);
-  margin: 0;
-  margin-inline-end: auto;
-}
-
-.dialog[data-variant="success"] {
-  --_alert-bg: var(--color-surface-success);
-  --_alert-text: var(--color-text-success);
-  --_alert-text-title: var(--color-text-title-success);
+  flex-direction: column;
+  gap: var(--gap-inline-default);
+  padding: var(--gap-default);
 }

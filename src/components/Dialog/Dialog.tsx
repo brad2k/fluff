@@ -2,16 +2,17 @@
 
 import clsx from "clsx";
 import styles from "./Dialog.module.css";
-import { X } from "lucide-react";
-import { Button } from "../Button";
-import { useEffect, useRef } from "react";
+import { useCallback, createContext, useEffect, useId, useRef } from "react";
 
 export interface DialogProps extends React.ComponentPropsWithRef<"dialog"> {
   closeOnBackdropClick?: boolean;
   open?: boolean;
-  title?: string;
-  titleLevel?: "h2" | "h3" | "h4" | "h5";
 }
+
+export const DialogContext = createContext<{
+  requestClose: () => void;
+  titleId: string;
+} | null>(null);
 
 export function Dialog({
   children,
@@ -19,13 +20,65 @@ export function Dialog({
   closeOnBackdropClick = true,
   open,
   ref,
-  title,
-  titleLevel = "h2",
   ...rest
 }: DialogProps) {
-  const HeadingLevel = titleLevel;
-
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+
+  // Firefox doesn't defer removing a closed <dialog> from the top layer to
+  // let CSS transitions play, unlike Chrome, so the close animation is
+  // driven here: mark it closing, let the transition run, then close it for
+  // real once it's already invisible.
+  const requestClose = useCallback(() => {
+    const dialog = dialogRef.current;
+    if (!dialog || !dialog.open || dialog.hasAttribute("data-closing")) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      dialog.close();
+      return;
+    }
+
+    dialog.setAttribute("data-closing", "");
+
+    const finishClose = () => {
+      clearTimeout(fallback);
+      dialog.removeEventListener("transitionend", handleTransitionEnd);
+      dialog.removeAttribute("data-closing");
+      dialog.close();
+    };
+
+    const handleTransitionEnd = (event: TransitionEvent) => {
+      if (
+        event.target === dialog &&
+        event.propertyName === "opacity" &&
+        !event.pseudoElement
+      ) {
+        finishClose();
+      }
+    };
+
+    dialog.addEventListener("transitionend", handleTransitionEnd);
+    const fallback = setTimeout(finishClose, 250);
+  }, []);
+
+  function handleClick(e: React.MouseEvent<HTMLDialogElement>) {
+    if (closeOnBackdropClick && e.target === dialogRef.current) {
+      requestClose();
+    }
+  }
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const handleCancel = (event: Event) => {
+      event.preventDefault();
+      requestClose();
+    };
+
+    dialog.addEventListener("cancel", handleCancel);
+    return () => dialog.removeEventListener("cancel", handleCancel);
+  }, [requestClose]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -33,34 +86,26 @@ export function Dialog({
 
     if (open && !dialog.open) {
       dialog.showModal();
-    } else if (!open && dialog.open) dialog.close();
-  }, [open]);
+    } else if (!open && dialog.open) requestClose();
+  }, [open, requestClose]);
 
   return (
     <dialog
       {...rest}
       className={clsx(styles.dialog, className)}
+      data-open={open}
+      onClick={handleClick}
       ref={(el) => {
         dialogRef.current = el;
         if (typeof ref === "function") {
           ref(el);
         } else if (ref) ref.current = el;
       }}
+      aria-labelledby={titleId}
     >
-      <header className={styles.header}>
-        {title && <HeadingLevel className={styles.title}>{title}</HeadingLevel>}
-
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => dialogRef.current?.close()}
-        >
-          <X className={styles.closeIcon} />
-          <span className="visually-hidden">Close</span>
-        </Button>
-      </header>
-
-      {children}
+      <DialogContext value={{ requestClose, titleId }}>
+        <div className={styles.dialogContent}>{children}</div>
+      </DialogContext>
     </dialog>
   );
 }

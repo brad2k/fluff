@@ -3,6 +3,8 @@ import type { Preview } from "@storybook/react-vite";
 // Everything Fluff ships: layers, reset, tokens, utilities. Always on.
 // @ts-expect-error CSS is handled by Vite at runtime.
 import "../src/styles/index.css";
+// @ts-expect-error CSS is handled by Vite at runtime.
+import "./base.css";
 
 // Dev-only "host page" styles, not part of the package. Imported as a
 // string so the toolbar can switch them on and off.

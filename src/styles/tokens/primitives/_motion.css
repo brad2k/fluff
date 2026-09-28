@@ -1,0 +1,5 @@
+:root {
+  --f-motion-base: 200ms ease-in-out;
+  --f-motion-fade: 500ms ease-in-out;
+  --f-motion-snappy: 150ms linear;
+}

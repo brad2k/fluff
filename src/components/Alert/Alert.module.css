@@ -1,23 +1,24 @@
 .alert {
-  --alert-bg: var(--color-surface-info);
-  --alert-text: var(--color-text-info);
-  --alert-text-title: var(--color-text-title-info, var(--alert-text));
-  --alert-padding: var(--alert-padding, var(--gap-default));
-  --alert-gap: var(--alert-gap, var(--gap-inline-default));
+  --_alert-bg: var(--f-color-surface-info);
+  --_alert-text: var(--f-color-text-info);
+  --_alert-text-title: var(--f-color-text-title-info, var(--_alert-text));
+  --_alert-padding: var(--f-alert-padding, var(--f-gap-default));
+  --_alert-gap: var(--f-alert-gap, var(--f-gap-inline-default));
 
-  background-color: var(--alert-bg);
-  color: var(--alert-text);
-  padding: var(--alert-padding);
+  background-color: var(--_alert-bg);
+  color: var(--_alert-text);
+  padding: var(--_alert-padding);
+  border-radius: var(--f-radius-container);
   display: flex;
   flex-direction: column;
-  gap: var(--alert-gap);
+  gap: var(--_alert-gap);
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--alert-padding);
+  gap: var(--_alert-padding);
 }
 
 .closeIcon {
@@ -26,25 +27,25 @@
 }
 
 .title {
-  color: var(--alert-text-title);
+  color: var(--_alert-text-title);
   margin: 0;
   margin-inline-end: auto;
 }
 
 .alert[data-variant="success"] {
-  --alert-bg: var(--color-surface-success);
-  --alert-text: var(--color-text-success);
-  --alert-text-title: var(--color-text-title-success);
+  --_alert-bg: var(--f-color-surface-success);
+  --_alert-text: var(--f-color-text-success);
+  --_alert-text-title: var(--f-color-text-title-success);
 }
 
 .alert[data-variant="warning"] {
-  --alert-bg: var(--color-surface-warning);
-  --alert-text: var(--color-text-warning);
-  --alert-text-title: var(--color-text-title-warning);
+  --_alert-bg: var(--f-color-surface-warning);
+  --_alert-text: var(--f-color-text-warning);
+  --_alert-text-title: var(--f-color-text-title-warning);
 }
 
 .alert[data-variant="danger"] {
-  --alert-bg: var(--color-surface-danger);
-  --alert-text: var(--color-text-danger);
-  --alert-text-title: var(--color-text-title-danger);
+  --_alert-bg: var(--f-color-surface-danger);
+  --_alert-text: var(--f-color-text-danger);
+  --_alert-text-title: var(--f-color-text-title-danger);
 }

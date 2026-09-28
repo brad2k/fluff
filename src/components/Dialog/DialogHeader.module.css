@@ -1,0 +1,18 @@
+.dialogHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--f-gap-inline-default);
+}
+
+.closeIcon {
+  height: 1em;
+  width: 1em;
+}
+
+.title {
+  font-size: var(--f-font-size-base);
+  font-weight: 600;
+  margin: 0;
+  margin-inline-end: auto;
+}

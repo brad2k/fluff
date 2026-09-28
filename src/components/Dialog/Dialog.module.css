@@ -1,0 +1,59 @@
+.dialog {
+  background: var(--f-color-bg);
+  padding: 0;
+  opacity: 0;
+  scale: 0.95;
+  border-width: 0;
+  border-radius: var(--f-radius-modal);
+  max-inline-size: min(30rem, calc(100vw - var(--f-gap-default)));
+  max-block-size: calc(100dvh - var(--f-gap-default));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity var(--f-motion-snappy),
+      scale var(--f-motion-snappy);
+  }
+
+  &::backdrop {
+    background-color: oklch(0 0 0 / 0);
+    transition: background-color var(--f-motion-snappy);
+  }
+}
+
+.dialog[open] {
+  opacity: 1;
+  scale: 1;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  &::backdrop {
+    background-color: var(--f-overlay-backdrop);
+  }
+
+  @starting-style {
+    &::backdrop {
+      background-color: oklch(0 0 0 / 0);
+    }
+  }
+}
+
+.dialog[open][data-closing] {
+  opacity: 0;
+  scale: 0.95;
+
+  &::backdrop {
+    background-color: oklch(0 0 0 / 0);
+  }
+}
+
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--f-gap-inline-default);
+  padding: var(--f-gap-default);
+}

@@ -2,7 +2,7 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-  gap: var(--gap-inline-default);
+  gap: var(--f-gap-inline-default);
 }
 
 .closeIcon {
@@ -11,7 +11,7 @@
 }
 
 .title {
-  font-size: var(--font-size-base);
+  font-size: var(--f-font-size-base);
   font-weight: 600;
   margin: 0;
   margin-inline-end: auto;

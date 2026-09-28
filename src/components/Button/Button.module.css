@@ -1,12 +1,12 @@
 .button {
-  --_btn-font: var(--button-font, var(--font-sans));
-  --_btn-weight: var(--button-weight);
-  --_btn-radius: var(--button-primary-border-radius);
-  --_btn-bg: var(--button-primary-bg);
-  --_btn-bg-hover: var(--button-primary-bg-hover);
-  --_btn-color: var(--button-primary-text);
-  --_btn-font-size: var(--button-md-font-size);
-  --_btn-padding: var(--button-md-padding);
+  --_btn-font: var(--f-button-font, var(--f-font-sans));
+  --_btn-weight: var(--f-button-weight);
+  --_btn-radius: var(--f-button-primary-border-radius);
+  --_btn-bg: var(--f-button-primary-bg);
+  --_btn-bg-hover: var(--f-button-primary-bg-hover);
+  --_btn-color: var(--f-button-primary-text);
+  --_btn-font-size: var(--f-button-md-font-size);
+  --_btn-padding: var(--f-button-md-padding);
 
   margin: 0;
   padding: var(--_btn-padding);
@@ -36,29 +36,29 @@
 }
 
 .button[data-size="sm"] {
-  --_btn-font-size: var(--button-sm-font-size);
-  --_btn-padding: var(--button-sm-padding);
+  --_btn-font-size: var(--f-button-sm-font-size);
+  --_btn-padding: var(--f-button-sm-padding);
 }
 
 .button[data-size="lg"] {
-  --_btn-font-size: var(--button-lg-font-size);
-  --_btn-padding: var(--button-lg-padding);
+  --_btn-font-size: var(--f-button-lg-font-size);
+  --_btn-padding: var(--f-button-lg-padding);
 }
 
 .button[data-variant="secondary"] {
-  --_btn-bg: var(--button-secondary-bg);
-  --_btn-bg-hover: var(--button-secondary-bg-hover);
-  --_btn-color: var(--button-secondary-text);
+  --_btn-bg: var(--f-button-secondary-bg);
+  --_btn-bg-hover: var(--f-button-secondary-bg-hover);
+  --_btn-color: var(--f-button-secondary-text);
 }
 
 .button[data-variant="ghost"] {
-  --_btn-bg: var(--button-ghost-bg);
-  --_btn-bg-hover: var(--button-ghost-bg-hover);
-  --_btn-color: var(--button-ghost-text);
+  --_btn-bg: var(--f-button-ghost-bg);
+  --_btn-bg-hover: var(--f-button-ghost-bg-hover);
+  --_btn-color: var(--f-button-ghost-text);
 }
 
 .button[data-variant="danger"] {
-  --_btn-bg: var(--button-danger-bg);
-  --_btn-bg-hover: var(--button-danger-bg-hover);
-  --_btn-color: var(--button-danger-text);
+  --_btn-bg: var(--f-button-danger-bg);
+  --_btn-bg-hover: var(--f-button-danger-bg-hover);
+  --_btn-color: var(--f-button-danger-text);
 }

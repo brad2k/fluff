@@ -1,5 +1,5 @@
 :root {
-  --animation-transition-base: 200ms ease-in-out 0ms;
-  --animation-transition-fade: 500ms ease-in-out 0ms;
-  --animation-transition-snappy: 150ms linear 0ms;
+  --f-motion-base: 200ms ease-in-out;
+  --f-motion-fade: 500ms ease-in-out;
+  --f-motion-snappy: 150ms linear;
 }

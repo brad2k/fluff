@@ -114,30 +114,30 @@
 
   --f-button-font: var(--f-font-body);
   --f-button-weight: var(--f-font-weight-medium);
+  --f-button-radius: var(--f-radius-interactive);
 
-  --f-button-primary-border-radius: 0;
-  --f-button-primary-bg: var(--f-color-sunbeam-300);
-  --f-button-primary-bg-hover: var(--f-color-sunbeam-400);
-  --f-button-primary-text: var(--f-color-sunbeam-900);
+  --f-button-bg-primary: var(--f-color-sunbeam-300);
+  --f-button-bg-primary-hover: var(--f-color-sunbeam-400);
+  --f-button-text-primary: var(--f-color-sunbeam-900);
 
-  --f-button-secondary-bg: var(--f-color-midnight-100);
-  --f-button-secondary-bg-hover: var(--f-color-midnight-200);
-  --f-button-secondary-text: var(--f-color-midnight-900);
+  --f-button-bg-secondary: var(--f-color-midnight-100);
+  --f-button-bg-secondary-hover: var(--f-color-midnight-200);
+  --f-button-text-secondary: var(--f-color-midnight-900);
 
-  --f-button-ghost-bg: transparent;
-  --f-button-ghost-bg-hover: var(--f-overlay-hover);
-  --f-button-ghost-text: var(--f-color-midnight-900);
+  --f-button-bg-ghost: transparent;
+  --f-button-bg-ghost-hover: var(--f-overlay-hover);
+  --f-button-text-ghost: var(--f-color-midnight-900);
 
-  --f-button-danger-bg: var(--f-color-poppy-200);
-  --f-button-danger-bg-hover: var(--f-color-poppy-300);
-  --f-button-danger-text: var(--f-color-poppy-900);
+  /* Danger bg/text intentionally reuse the status tokens directly (see Button.module.css) —
+     only the hover value has no semantic equivalent, so it stays here. */
+  --f-button-bg-danger-hover: var(--f-color-poppy-300);
 
-  --f-button-lg-font-size: var(--f-font-size-base);
-  --f-button-lg-padding: var(--f-gap-inline-loose);
+  --f-button-font-size-sm: var(--f-font-size-subtle);
+  --f-button-padding-sm: var(--f-gap-inline-tight);
 
-  --f-button-md-font-size: var(--f-font-size-base);
-  --f-button-md-padding: var(--f-gap-inline-default) var(--f-gap-compact);
+  --f-button-font-size-md: var(--f-font-size-base);
+  --f-button-padding-md: var(--f-gap-inline-default) var(--f-gap-compact);
 
-  --f-button-sm-font-size: var(--f-font-size-subtle);
-  --f-button-sm-padding: var(--f-gap-inline-tight);
+  --f-button-font-size-lg: var(--f-font-size-base);
+  --f-button-padding-lg: var(--f-gap-inline-loose);
 }

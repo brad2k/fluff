@@ -1,12 +1,12 @@
 .button {
   --_btn-font: var(--f-button-font, var(--f-font-sans));
   --_btn-weight: var(--f-button-weight);
-  --_btn-radius: var(--f-button-primary-border-radius);
-  --_btn-bg: var(--f-button-primary-bg);
-  --_btn-bg-hover: var(--f-button-primary-bg-hover);
-  --_btn-color: var(--f-button-primary-text);
-  --_btn-font-size: var(--f-button-md-font-size);
-  --_btn-padding: var(--f-button-md-padding);
+  --_btn-radius: var(--f-button-radius);
+  --_btn-bg: var(--f-button-bg-primary);
+  --_btn-bg-hover: var(--f-button-bg-primary-hover);
+  --_btn-color: var(--f-button-text-primary);
+  --_btn-font-size: var(--f-button-font-size-md);
+  --_btn-padding: var(--f-button-padding-md);
 
   margin: 0;
   padding: var(--_btn-padding);
@@ -23,7 +23,7 @@
   align-items: center;
 
   @media (prefers-reduced-motion: no-preference) {
-    transition: background-color 200ms ease-in-out;
+    transition: background-color var(--f-motion-base);
   }
 }
 
@@ -36,29 +36,29 @@
 }
 
 .button[data-size="sm"] {
-  --_btn-font-size: var(--f-button-sm-font-size);
-  --_btn-padding: var(--f-button-sm-padding);
+  --_btn-font-size: var(--f-button-font-size-sm);
+  --_btn-padding: var(--f-button-padding-sm);
 }
 
 .button[data-size="lg"] {
-  --_btn-font-size: var(--f-button-lg-font-size);
-  --_btn-padding: var(--f-button-lg-padding);
+  --_btn-font-size: var(--f-button-font-size-lg);
+  --_btn-padding: var(--f-button-padding-lg);
 }
 
 .button[data-variant="secondary"] {
-  --_btn-bg: var(--f-button-secondary-bg);
-  --_btn-bg-hover: var(--f-button-secondary-bg-hover);
-  --_btn-color: var(--f-button-secondary-text);
+  --_btn-bg: var(--f-button-bg-secondary);
+  --_btn-bg-hover: var(--f-button-bg-secondary-hover);
+  --_btn-color: var(--f-button-text-secondary);
 }
 
 .button[data-variant="ghost"] {
-  --_btn-bg: var(--f-button-ghost-bg);
-  --_btn-bg-hover: var(--f-button-ghost-bg-hover);
-  --_btn-color: var(--f-button-ghost-text);
+  --_btn-bg: var(--f-button-bg-ghost);
+  --_btn-bg-hover: var(--f-button-bg-ghost-hover);
+  --_btn-color: var(--f-button-text-ghost);
 }
 
 .button[data-variant="danger"] {
-  --_btn-bg: var(--f-button-danger-bg);
-  --_btn-bg-hover: var(--f-button-danger-bg-hover);
-  --_btn-color: var(--f-button-danger-text);
+  --_btn-bg: var(--f-color-surface-danger);
+  --_btn-bg-hover: var(--f-button-bg-danger-hover);
+  --_btn-color: var(--f-color-text-title-danger);
 }

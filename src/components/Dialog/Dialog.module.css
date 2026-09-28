@@ -1,9 +1,10 @@
 .dialog {
-  background: var(--f-color-white);
+  background: var(--f-color-bg);
   padding: 0;
   opacity: 0;
   scale: 0.95;
   border-width: 0;
+  border-radius: var(--f-radius-modal);
   max-inline-size: min(30rem, calc(100vw - var(--f-gap-default)));
   max-block-size: calc(100dvh - var(--f-gap-default));
   overflow-y: auto;
